@@ -16,6 +16,12 @@ My first step will be to build an automated system to care for a single, maure, 
 
 Ill use an Arduino initially for simplicity but expect to outgrow it
 
+### Power
+
+- 5V Supply
+- 12-24V Supply (Based on Pump)
+- Relay
+  
 ### Input
 
 - Moisture
