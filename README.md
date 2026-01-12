@@ -19,6 +19,7 @@ Ill use an Arduino initially for simplicity but expect to outgrow it
 ### Input
 
 - Moisture
+- Water Level (For Tank)
 - Temp
 
 ### Output
