@@ -1,4 +1,4 @@
-# Low Maintenance Plants
+# Plant Pod
 
 ## Background
 
