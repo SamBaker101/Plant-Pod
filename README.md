@@ -6,9 +6,15 @@ To simplify the process of starting seeds and growing plants indoors. The system
 
 ## Roadmap
 
-### Stage 1: Single Plant System
+### Single Plant System
 
 My first step will be to build an automated system to care for a single, maure, houseplant. This will limit the inputs, outputs and variables while I learn the problem space.
+
+1. Water on timer
+2. Water based on sensor
+3. Light on timer
+4. Temp monitoring
+5. Heating based on temp control
 
 ## Plant Requirements
 
