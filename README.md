@@ -8,7 +8,7 @@ To simplify the process of starting seeds and growing plants indoors. The system
 
 ### Single Plant System
 
-My first step will be to build an automated system to care for a single, maure, houseplant. This will limit the inputs, outputs and variables while I learn the problem space.
+My first step will be to build an automated system to care for a single, mature, houseplant. This will limit the inputs, outputs and variables while I learn the problem space.
 
 1. Water on timer
 2. Water based on sensor
