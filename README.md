@@ -50,6 +50,7 @@ Ill use an Arduino initially for simplicity but expect to outgrow it
 ### Output
 
 - Pump
+- Solenoid Valve
 - Light
 - Heater
 
