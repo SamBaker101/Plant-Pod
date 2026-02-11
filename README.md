@@ -33,7 +33,7 @@ For this project I will be using a small dark leaved philodendron which Ive had 
 
 ### Control
 
-Ill use an Arduino initially for simplicity but expect to outgrow it
+ESP S3 Mini
 
 ### Power
 
