@@ -1,8 +1,8 @@
-#define LED_PIN 9
-#define ANALOG_PIN 7
-
 //ESP32 S3 Code for Plant Pod Project
 //Sam Baker - 2026
+
+#define LED_PIN 9
+#define ANALOG_PIN 7
 
 void setup() {
   pinMode(LED_PIN, OUTPUT);
@@ -14,10 +14,10 @@ void setup() {
 }
 
 void loop() {
-  int read_data = get_read();
-  if (read_data != -1) handle_read(read_data);
-  int analog_value = analogRead(ANALOG_PIN);
-  Serial.println(analog_value);
+  int analog_read = -1;
+  analog_read = analogRead(ANALOG_PIN);
+  if (analog_read != -1) handle_read(analog_read);
+
   delay(100);
 }
 
@@ -34,8 +34,8 @@ int get_read(){
 
 void handle_read(int read_value){
   Serial.println(read_value);
-  digitalWrite(LED_PIN, HIGH);
-  delay(read_value);
-  digitalWrite(LED_PIN, LOW);
-
+  if (read_value < 1024)
+    digitalWrite(LED_PIN, HIGH);
+  else
+    digitalWrite(LED_PIN, LOW);
 }
