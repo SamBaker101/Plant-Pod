@@ -2,11 +2,14 @@
 //Sam Baker - 2026
 
 #define LED_PIN 9
-#define ANALOG_PIN 7
+#define INPUT_PIN 7
+
+#define USE_ANALOG 0
+#define ANALOG_THRESHOLD 1024
 
 void setup() {
   pinMode(LED_PIN, OUTPUT);
-  pinMode(ANALOG_PIN, INPUT);
+  pinMode(INPUT_PIN, INPUT);
   Serial.begin(9600);
   while (!Serial) {
     ; // wait for serial port to connect. Needed for native USB port only
@@ -14,9 +17,9 @@ void setup() {
 }
 
 void loop() {
-  int analog_read = -1;
-  analog_read = analogRead(ANALOG_PIN);
-  if (analog_read != -1) handle_read(analog_read);
+  int read = -1;
+  read = USE_ANALOG ? analogRead(INPUT_PIN) : digitalRead(INPUT_PIN);
+  if (read != -1) handle_read(read);
 
   delay(100);
 }
@@ -34,7 +37,7 @@ int get_read(){
 
 void handle_read(int read_value){
   Serial.println(read_value);
-  if (read_value < 1024)
+  if ((read_value < ANALOG_THRESHOLD && USE_ANALOG) || (read_value == 0))
     digitalWrite(LED_PIN, HIGH);
   else
     digitalWrite(LED_PIN, LOW);
