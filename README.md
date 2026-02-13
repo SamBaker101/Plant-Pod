@@ -38,7 +38,8 @@ ESP S3 Mini
 ### Power
 
 - 5V Supply
-- 12-24V Supply (Based on Pump)
+- 12-24V Supply (Based on Pump) 
+  - Currently using a low power 5V pump for simplicity, will replace later 
 - Relay
   
 ### Input

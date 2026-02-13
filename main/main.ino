@@ -3,13 +3,19 @@
 
 #define LED_PIN 9
 #define INPUT_PIN 7
+#define OUTPUT_PIN  1
 
 #define USE_ANALOG 0
 #define ANALOG_THRESHOLD 1024
 
 void setup() {
   pinMode(LED_PIN, OUTPUT);
+  pinMode(OUTPUT_PIN, OUTPUT); 
   pinMode(INPUT_PIN, INPUT);
+
+  digitalWrite(LED_PIN, LOW);
+  digitalWrite(OUTPUT_PIN, LOW);
+
   Serial.begin(9600);
   while (!Serial) {
     ; // wait for serial port to connect. Needed for native USB port only
@@ -37,8 +43,11 @@ int get_read(){
 
 void handle_read(int read_value){
   Serial.println(read_value);
-  if ((read_value < ANALOG_THRESHOLD && USE_ANALOG) || (read_value == 0))
+  if ((read_value > ANALOG_THRESHOLD && USE_ANALOG) || (read_value == 1 && !USE_ANALOG)) {
     digitalWrite(LED_PIN, HIGH);
-  else
+    digitalWrite(OUTPUT_PIN, HIGH);
+  } else {
     digitalWrite(LED_PIN, LOW);
+    digitalWrite(OUTPUT_PIN, LOW);
+  }
 }
